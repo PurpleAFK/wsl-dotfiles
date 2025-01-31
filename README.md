@@ -5,6 +5,7 @@
 Install dependencies (if needed)
 
 ```bash
+  sudo pacman -S python3
   sudo pacman -S npm
   sudo pacman -S stow
 ```
@@ -22,6 +23,7 @@ Go to the project directory
 ```
 
 Use Stow to create the symlinks
+
 ```bash
   stow .
 ```
