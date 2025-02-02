@@ -44,12 +44,17 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# FZF
+# Set up fzf key bindings and fuzzy completion
+#source <(fzf --zsh)
+
 # Aliases
 alias ls="ls --color"
 
 # Shell Integrations
-# eval "$(fzf)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/pure.toml)"
 
 source /home/purpleafk/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source <(fzf --zsh)
