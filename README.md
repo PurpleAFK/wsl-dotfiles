@@ -2,6 +2,18 @@
 
 ## Run Locally
 
+Install all the necessary tools
+
+```bash
+  fzf
+  fzf-git
+  zoxide
+  eza
+  yazi
+  tmux
+
+```
+
 Install dependencies (if needed)
 
 ```bash

@@ -44,17 +44,39 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
 # FZF
 # Set up fzf key bindings and fuzzy completion
-#source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% " 
+
 
 # Aliases
-alias ls="ls --color"
+alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
+# git aliases
+alias git="git"
+alias ga="git add ."
+alias gs="git status -s"
+alias gc='git commit -m'
+alias glog='git log --oneline --graph --all'
+# nvim
+alias nv="nvim"
+#clear
+alias cls="clear"
 
 # Shell Integrations
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/pure.toml)"
-
+source $HOME/.config/scripts/fzf-git.sh
 source /home/purpleafk/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+eval "$(zoxide init zsh)"
 source <(fzf --zsh)
