@@ -70,8 +70,10 @@ alias gc='git commit -m'
 alias glog='git log --oneline --graph --all'
 # nvim
 alias nv="nvim"
-#clear
+# clear
 alias cls="clear"
+# exit
+alias e="exit"
 
 # Shell Integrations
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
