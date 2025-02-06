@@ -79,7 +79,7 @@ alias e="exit"
 
 # Shell Integrations
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/pure.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/pure.omp.json)"
 source $HOME/.config/scripts/fzf-git.sh
 source /home/purpleafk/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init zsh)"
