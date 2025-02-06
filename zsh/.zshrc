@@ -62,6 +62,7 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 
 # Aliases
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
+alias ll="ls -la"
 # git aliases
 alias git="git"
 alias ga="git add ."
@@ -72,6 +73,13 @@ alias glog='git log --oneline --graph --all'
 alias y="yazi"
 # nvim
 alias nv="nvim"
+alias fu="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse| xargs nvim"
+# tmux
+alias t="tmux"
+alias tn="tmux new -s"
+alias ta="tmux attach -t"
+alias td="tmux detach"
+alias tk="tmux kill-session -t"
 # clear
 alias cls="clear"
 # exit
