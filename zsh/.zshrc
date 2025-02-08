@@ -63,6 +63,9 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 # Aliases
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
 alias ll="ls -la"
+# running code
+alias g="g++"
+alias run="./a.out"
 # git aliases
 alias git="git"
 alias ga="git add ."
