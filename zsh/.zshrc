@@ -72,6 +72,7 @@ alias ga="git add ."
 alias gs="git status -s"
 alias gc='git commit -m'
 alias glog='git log --oneline --graph --all'
+alias lg='lazygit'
 # yazi
 alias y="yazi"
 # nvim
