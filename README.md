@@ -11,14 +11,16 @@ Install all the necessary tools
   eza
   yazi
   tmux
+  ripgrep
+  python3
+  npm
+  fd
 
 ```
 
-Install dependencies (if needed)
+Install Stow
 
 ```bash
-  sudo pacman -S python3
-  sudo pacman -S npm
   sudo pacman -S stow
 ```
 
