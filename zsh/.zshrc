@@ -44,6 +44,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# Exports
+export PATH=/home/purpleafk/hx/:$PATH
+
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
@@ -66,6 +69,7 @@ alias ll="ls -la"
 # running code
 alias g="g++"
 alias run="./a.out"
+alias py="python3 -u"
 # git aliases
 alias git="git"
 alias ga="git add ."
