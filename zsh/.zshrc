@@ -81,13 +81,16 @@ alias lg='lazygit'
 alias y="yazi"
 # nvim
 alias nv="nvim"
-alias fu="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse| xargs nvim"
+alias no="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse| xargs nvim"
 # tmux
-alias t="tmux"
 alias tn="tmux new -s"
 alias ta="tmux attach -t"
 alias td="tmux detach"
 alias tk="tmux kill-session -t"
+
+#Scripts
+alias t="$HOME/.config/scripts/fzf-tmux.sh"
+
 # clear
 alias cls="clear"
 # exit
