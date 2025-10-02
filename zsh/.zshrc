@@ -62,6 +62,18 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 # fzf preview for tmux
 export FZF_TMUX_OPTS=" -p90%,70% " 
 
+# functions
+cpp() { g++ "$1" && ./a.out; }
+
+tf() {
+  if [ -z "$1" ]; then
+    echo "Usage: tf /path/to/project [session-name]"
+    return 1
+  fi
+  local session_name="${2:-programming}"
+  PROJECT_DIR="$1" tmuxifier load-session "$session_name"
+}
+
 
 # Aliases
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
@@ -70,6 +82,7 @@ alias ll="ls -la"
 alias g="g++"
 alias run="./a.out"
 alias py="python3 -u"
+alias cpprun='f(){ g++ "$1" -o "${1%.*}" && ./"${1%.*}"; }; f'
 # git aliases
 alias git="git"
 alias ga="git add ."
@@ -88,6 +101,12 @@ alias ta="tmux attach -t"
 alias td="tmux detach"
 alias tk="tmux kill-session -t"
 
+# tmuxifier
+alias tls="tmuxifier load-session"
+alias tlw="tmuxifier load-window"
+alias tns="tmuxifier new-session"
+alias tnw="tmuxifier new-window"
+
 #Scripts
 alias t="$HOME/.config/scripts/fzf-tmux.sh"
 
@@ -97,6 +116,8 @@ alias cls="clear"
 alias e="exit"
 
 # Shell Integrations
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/pure.omp.json)"
 source $HOME/.config/scripts/fzf-git.sh
